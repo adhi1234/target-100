@@ -1,29 +1,27 @@
 #include <stdio.h>
-#include <conio.h>
-
+//#include <conio.h>
 
 int main()
 {
+  int n, first = 0, second = 1, next, c;
 
-  int num,sum=1;
-  int a,b,c;
+  printf("Enter the number \n");
+  scanf("%d", &n);
 
-a=0;
-b=1;
-  printf("Enter the limit");
-  scanf("%d",&num);
+  printf("First %d :\n", n);
 
-  printf("%d \n %d",a,b);
+  for (c = 0; c < n; c++)
+  {
+    if (c <= 1)
+      next = c;
+    else
+    {
+      next = first + second;
+      first = second;
+      second = next;
+    }
+    printf("%d\n", next);
+  }
 
-for(int i=0;i<num;i++)
-{
-   c=a+b;
-   printf("%d\n",c);
-   a=b;
-   b=c;
-
-
-
-}
-return 0;
+  return 0;
 }
