@@ -78,7 +78,7 @@ for( i=0;i<n2;i++) // array input
 
 
 
-for(i=1;i<5;i++)
+for(i=1;i<n2;i++)
 {
 	key=b[i];
 	while(i>0 && b[i-1]>key) {
@@ -90,13 +90,16 @@ for(i=1;i<5;i++)
 }
 int k;
 for(k=0;k<n2;k++)
-{printf("%d	", b[k]);}
-printf("\n");
+{printf("%d\n	", b[k]);}
+//printf("\n");
 	}
 
 
 
 //selection
+
+
+
 
     void selection()
     {
@@ -121,33 +124,37 @@ for( i=0;i<n3;i++) // array input
 
 }
 
-        for(i=0;i<n3;i++)
+        for(i=0;i<=(n3-2);i++)
          {
 	    min=i;
-	    for(j=i+1;j<n3;j++) 
+	    for(j=i+1;j<=(n3-1);j++) 
         {
-		if(c[min]>c[j]) 
+		if(c[j]<c[min]) 
         {
 			min=j;
 	}
-	x=c[min];
-	c[min]=c[j];
-	c[j]=x;
+	x=c[i];
+	c[i]=c[min];
+	c[min]=x;
 
     }	
     }
     for(k=0;k<n3;k++)
      {
-         printf("%d",c[k]);
+         printf("%d\n",c[k]);
      }
-	printf("\n");
+	//printf("\n");
     }
 
 
     int main()
     {
 
+      fflush(stdin);
+
         int choice;
+
+
 
         printf("Enter the choice");
         scanf("%d",&choice);
